@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import ErrorPage from 'next/error'
 import Container from '@/components/container'
 import PostBody from '@/components/post-body'
-import MoreStories from '@/components/more-stories'
+import PostPreviewList from '@/components/post-preview-list'
 import Header from '@/components/header'
 import PostHeader from '@/components/post-header'
 import SectionSeparator from '@/components/section-separator'
@@ -28,7 +28,7 @@ export default function Post({ post, morePosts, preview }) {
             <article>
               <Head>
                 <title>
-                  {post.title} | Next.js Blog Example with {CMS_NAME}
+                  {post.title} | Cooking Papa
                 </title>
                 <meta property="og:image" content={post.feature_image} />
               </Head>
@@ -41,7 +41,7 @@ export default function Post({ post, morePosts, preview }) {
               <PostBody content={post.html} />
             </article>
             <SectionSeparator />
-            {morePosts.length > 0 && <MoreStories posts={morePosts} />}
+            {morePosts.length > 0 && <PostPreviewList posts={morePosts} />}
           </>
         )}
       </Container>
